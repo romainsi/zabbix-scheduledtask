@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>3.2</version>
+    <date>2017-07-28T08:04:19Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template Windows Taches Planifiees</template>
+            <name>Template Windows Taches Planifiées</name>
+            <description>Discover and monitor all Task from &quot;Task Scheduler Library&quot; with subfolders indicate in powershell script.</description>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Tache planifiee</name>
+                </application>
+            </applications>
+            <items/>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>Discovery Task Scheduler</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>TaskSchedulerMonitoring[discovertasks]</key>
+                    <delay>86400</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions/>
+                    </filter>
+                    <lifetime>0</lifetime>
+                    <description>Discover all Task at &quot;Task Scheduler Libraray&quot; with Subfolders indicate in powershell script.</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Task: {#APPTASKS}: Last Result</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}]</key>
+                            <delay>120</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>Last Result of Task, numeric value&#13;
+in most cases 0 = succesfull</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Tache planifiee</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>scheduledtask</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Task: {#APPTASKS}: Last Run Time</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>TaskSchedulerMonitoring[TaskLastRunTime,{#APPTASKS}]</key>
+                            <delay>120</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>unixtime</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>Last Run Time of Task as an unixtimestamp</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Tache planifiee</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Task: {#APPTASKS}: Next Run Time</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>TaskSchedulerMonitoring[TaskNextRunTime,{#APPTASKS}]</key>
+                            <delay>120</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>unixtime</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description>Next Run Time of Task as an unixtimestamp</description>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Tache planifiee</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Template Windows Taches Planifiees:TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}].last()}&lt;&gt;0 and {Template Windows Taches Planifiees:TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}].last()}&lt;&gt;267009 and {Template Windows Taches Planifiees:TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}].last()}&lt;&gt;1</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>Dernier lancement de {#TSMTASKNAME} Erreur !</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description/>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                </discovery_rule>
+            </discovery_rules>
+            <httptests/>
+            <macros/>
+            <templates/>
+            <screens/>
+        </template>
+    </templates>
+    <value_maps>
+        <value_map>
+            <name>scheduledtask</name>
+            <mappings>
+                <mapping>
+                    <value>0</value>
+                    <newvalue>Succès</newvalue>
+                </mapping>
+                <mapping>
+                    <value>0x41300</value>
+                    <newvalue>La tâche est prête à fonctionner à l'heure prévue suivante</newvalue>
+                </mapping>
+                <mapping>
+                    <value>0x41301</value>
+                    <newvalue>La tâche est en cours d'exécution</newvalue>
+                </mapping>
+                <mapping>
+                    <value>0x41303</value>
+                    <newvalue>La tâche n'est pas encore terminée</newvalue>
+                </mapping>
+                <mapping>
+                    <value>0x41304</value>
+                    <newvalue>Il n'y a plus d'opérations programmées pour cette tâche</newvalue>
+                </mapping>
+                <mapping>
+                    <value>0x41306</value>
+                    <newvalue>La tâche est terminée</newvalue>
+                </mapping>
+                <mapping>
+                    <value>0x800704DD</value>
+                    <newvalue>Le service n'est pas disponible</newvalue>
+                </mapping>
+                <mapping>
+                    <value>0x8004130F</value>
+                    <newvalue>Identifiants corrompus</newvalue>
+                </mapping>
+                <mapping>
+                    <value>0x8004131F</value>
+                    <newvalue>Une instance de cette tâche est déjà en cours d'exécution</newvalue>
+                </mapping>
+                <mapping>
+                    <value>0x8007010B</value>
+                    <newvalue>Le répertoire «démarrer dans» ne peut être trouvé</newvalue>
+                </mapping>
+                <mapping>
+                    <value>0x80070002</value>
+                    <newvalue>Un des fichiers n'est pas disponible</newvalue>
+                </mapping>
+                <mapping>
+                    <value>0xC06D007E</value>
+                    <newvalue>Exception logicielle inconnue</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>Fonction incorrecte ou inconnue appelée</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>Fichier non trouvé</newvalue>
+                </mapping>
+                <mapping>
+                    <value>10</value>
+                    <newvalue>Environnement Incorrect</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>

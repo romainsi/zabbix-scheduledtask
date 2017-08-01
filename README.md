@@ -19,6 +19,8 @@ Install :
 
 - Copy DiscoverScheduledTasks.ps1 in your zabbix agent directory,
 
+- In powershell script change $path variable for subsfolders,
+
 - Add the following line to your Zabbix agent configuration file : 
 
 EnableRemoteCommands=1

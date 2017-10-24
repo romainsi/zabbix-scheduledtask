@@ -1,4 +1,4 @@
-﻿# Script: DiscoverSchelduledTasks
+# Script: DiscoverSchelduledTasks
 # Author: Romain Si
 # 
 # This script is intended for use with Zabbix > 3.x
@@ -11,10 +11,7 @@
 ## Change the $path variable to indicate the Scheduled Tasks subfolder to be processed as "\nameFolder\","\nameFolder2\subfolder\" see (Get-ScheduledTask -TaskPath )
 
 
-
-$path = "\examplefolder\","\examplefolder\examplesubfolder\"
-
-
+$path = "\examplefolder\"
 
 
 Function Convert-ToUnixDate ($PSdate) {
@@ -27,7 +24,7 @@ $ID = [string]$args[1]
 
 switch ($ITEM) {
   "DiscoverTasks" {
-$apptasks = Get-ScheduledTask -TaskPath $path | where {$_.state -like "Ready" -and "Running"}
+$apptasks = Get-ScheduledTask -TaskPath $path | where {$_.state -like "Ready" -or "Running"}
 $apptasksok1 = $apptasks.TaskName
 $apptasksok = $apptasksok1.replace('â','&acirc;').replace('à','&agrave;').replace('ç','&ccedil;').replace('é','&eacute;').replace('è','&egrave;').replace('ê','&ecirc;')
 $idx = 1
@@ -83,7 +80,7 @@ $name1 = $name.replace('&acirc;','â').replace('&agrave;','à').replace('&ccedil
 $pathtask = Get-ScheduledTask -TaskPath "*" -TaskName "$name1"
 $pathtask1 = $pathtask.Taskpath
 $taskResult = Get-ScheduledTaskInfo -TaskPath "$pathtask1" -TaskName "$name1"
-$taskResult1 = $taskResult.LastRunTime
+$taskResult1 = $taskResult.NextRunTime
 $date = get-date -date "01/01/1970"
 $taskResult2 = (New-TimeSpan -Start $date -end $taskresult1).TotalSeconds
 Write-Output ($taskResult2)

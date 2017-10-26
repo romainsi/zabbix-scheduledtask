@@ -15,6 +15,8 @@ Triggers : [HIGH] => Last Result of tasks FAILED
 
 Install : 
 
+- Import template,
+
 - Install the Zabbix agent on your host,
 
 - Copy DiscoverScheduledTasks.ps1 in your zabbix agent directory,

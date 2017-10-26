@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>3.2</version>
-    <date>2017-07-28T08:04:19Z</date>
+    <version>3.4</version>
+    <date>2017-10-26T15:02:29Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -30,7 +30,7 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>TaskSchedulerMonitoring[discovertasks]</key>
-                    <delay>86400</delay>
+                    <delay>2h</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -40,7 +40,6 @@
                     <snmpv3_authpassphrase/>
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
                     <snmpv3_privpassphrase/>
-                    <delay_flex/>
                     <params/>
                     <ipmi_sensor/>
                     <authtype>0</authtype>
@@ -61,17 +60,15 @@
                             <name>Task: {#APPTASKS}: Last Result</name>
                             <type>0</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}]</key>
-                            <delay>120</delay>
-                            <history>7</history>
-                            <trends>90</trends>
+                            <delay>2m</delay>
+                            <history>1w</history>
+                            <trends>90d</trends>
                             <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
                             <units/>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -79,11 +76,8 @@
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username/>
                             <password/>
@@ -102,23 +96,24 @@ in most cases 0 = succesfull</description>
                                 <name>scheduledtask</name>
                             </valuemap>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint/>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
                             <name>Task: {#APPTASKS}: Last Run Time</name>
                             <type>0</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>TaskSchedulerMonitoring[TaskLastRunTime,{#APPTASKS}]</key>
-                            <delay>120</delay>
-                            <history>7</history>
-                            <trends>90</trends>
+                            <delay>2m</delay>
+                            <history>1w</history>
+                            <trends>90d</trends>
                             <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
                             <units>unixtime</units>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -126,11 +121,8 @@ in most cases 0 = succesfull</description>
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username/>
                             <password/>
@@ -146,23 +138,24 @@ in most cases 0 = succesfull</description>
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint/>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
                             <name>Task: {#APPTASKS}: Next Run Time</name>
                             <type>0</type>
                             <snmp_community/>
-                            <multiplier>0</multiplier>
                             <snmp_oid/>
                             <key>TaskSchedulerMonitoring[TaskNextRunTime,{#APPTASKS}]</key>
-                            <delay>120</delay>
-                            <history>7</history>
-                            <trends>90</trends>
+                            <delay>2m</delay>
+                            <history>1w</history>
+                            <trends>90d</trends>
                             <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
                             <units>unixtime</units>
-                            <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -170,11 +163,8 @@ in most cases 0 = succesfull</description>
                             <snmpv3_authpassphrase/>
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
                             <snmpv3_privpassphrase/>
-                            <formula>1</formula>
-                            <delay_flex/>
                             <params/>
                             <ipmi_sensor/>
-                            <data_type>0</data_type>
                             <authtype>0</authtype>
                             <username/>
                             <password/>
@@ -190,7 +180,10 @@ in most cases 0 = succesfull</description>
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint/>
                             <application_prototypes/>
+                            <master_item_prototype/>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
@@ -198,7 +191,7 @@ in most cases 0 = succesfull</description>
                             <expression>{Template Windows Taches Planifiees:TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}].last()}&lt;&gt;0 and {Template Windows Taches Planifiees:TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}].last()}&lt;&gt;267009 and {Template Windows Taches Planifiees:TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}].last()}&lt;&gt;1</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
-                            <name>Dernier lancement de {#TSMTASKNAME} Erreur !</name>
+                            <name>Dernier lancement de {#APPTASKS} Erreur !</name>
                             <correlation_mode>0</correlation_mode>
                             <correlation_tag/>
                             <url/>
@@ -213,6 +206,7 @@ in most cases 0 = succesfull</description>
                     </trigger_prototypes>
                     <graph_prototypes/>
                     <host_prototypes/>
+                    <jmx_endpoint/>
                 </discovery_rule>
             </discovery_rules>
             <httptests/>
@@ -284,6 +278,10 @@ in most cases 0 = succesfull</description>
                 <mapping>
                     <value>10</value>
                     <newvalue>Environnement Incorrect</newvalue>
+                </mapping>
+                <mapping>
+                    <value>267014</value>
+                    <newvalue>Tâche annulé par l'utilisateur</newvalue>
                 </mapping>
             </mappings>
         </value_map>

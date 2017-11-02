@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>3.4</version>
+    <version>3.0</version>
     <date>2017-10-26T15:02:29Z</date>
     <groups>
         <group>
@@ -30,7 +30,7 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>TaskSchedulerMonitoring[discovertasks]</key>
-                    <delay>2h</delay>
+                    <delay>7200</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -42,6 +42,7 @@
                     <snmpv3_privpassphrase/>
                     <params/>
                     <ipmi_sensor/>
+					<delay_flex/>
                     <authtype>0</authtype>
                     <username/>
                     <password/>
@@ -62,9 +63,9 @@
                             <snmp_community/>
                             <snmp_oid/>
                             <key>TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}]</key>
-                            <delay>2m</delay>
-                            <history>1w</history>
-                            <trends>90d</trends>
+                            <delay>120</delay>
+                            <history>7</history>
+                            <trends>90</trends>
                             <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
@@ -78,6 +79,11 @@
                             <snmpv3_privpassphrase/>
                             <params/>
                             <ipmi_sensor/>
+							<multiplier>0</multiplier>
+							<formula>1</formula>
+							<delta>0</delta>
+							<delay_flex/>
+							<data_type>0</data_type>
                             <authtype>0</authtype>
                             <username/>
                             <password/>
@@ -96,10 +102,7 @@ in most cases 0 = succesfull</description>
                                 <name>scheduledtask</name>
                             </valuemap>
                             <logtimefmt/>
-                            <preprocessing/>
-                            <jmx_endpoint/>
                             <application_prototypes/>
-                            <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
                             <name>Task: {#APPTASKS}: Last Run Time</name>
@@ -107,9 +110,9 @@ in most cases 0 = succesfull</description>
                             <snmp_community/>
                             <snmp_oid/>
                             <key>TaskSchedulerMonitoring[TaskLastRunTime,{#APPTASKS}]</key>
-                            <delay>2m</delay>
-                            <history>1w</history>
-                            <trends>90d</trends>
+                            <delay>120</delay>
+                            <history>7</history>
+                            <trends>90</trends>
                             <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
@@ -123,7 +126,12 @@ in most cases 0 = succesfull</description>
                             <snmpv3_privpassphrase/>
                             <params/>
                             <ipmi_sensor/>
+							<multiplier>0</multiplier>
+							<formula>1</formula>
+							<delta>0</delta>
+							<delay_flex/>
                             <authtype>0</authtype>
+							<data_type>0</data_type>
                             <username/>
                             <password/>
                             <publickey/>
@@ -138,10 +146,7 @@ in most cases 0 = succesfull</description>
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
-                            <preprocessing/>
-                            <jmx_endpoint/>
                             <application_prototypes/>
-                            <master_item_prototype/>
                         </item_prototype>
                         <item_prototype>
                             <name>Task: {#APPTASKS}: Next Run Time</name>
@@ -149,9 +154,9 @@ in most cases 0 = succesfull</description>
                             <snmp_community/>
                             <snmp_oid/>
                             <key>TaskSchedulerMonitoring[TaskNextRunTime,{#APPTASKS}]</key>
-                            <delay>2m</delay>
-                            <history>1w</history>
-                            <trends>90d</trends>
+                            <delay>120</delay>
+                            <history>7</history>
+                            <trends>90</trends>
                             <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
@@ -165,6 +170,11 @@ in most cases 0 = succesfull</description>
                             <snmpv3_privpassphrase/>
                             <params/>
                             <ipmi_sensor/>
+							<multiplier>0</multiplier>
+							<formula>1</formula>
+							<delta>0</delta>
+							<delay_flex/>
+							<data_type>0</data_type>
                             <authtype>0</authtype>
                             <username/>
                             <password/>
@@ -180,36 +190,25 @@ in most cases 0 = succesfull</description>
                             </applications>
                             <valuemap/>
                             <logtimefmt/>
-                            <preprocessing/>
-                            <jmx_endpoint/>
                             <application_prototypes/>
-                            <master_item_prototype/>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{Template Windows Taches Planifiees:TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}].last()}&lt;&gt;0 and {Template Windows Taches Planifiees:TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}].last()}&lt;&gt;267009 and {Template Windows Taches Planifiees:TaskSchedulerMonitoring[TaskLastResult,{#APPTASKS}].last()}&lt;&gt;1</expression>
-                            <recovery_mode>0</recovery_mode>
-                            <recovery_expression/>
                             <name>Dernier lancement de {#APPTASKS} Erreur !</name>
-                            <correlation_mode>0</correlation_mode>
-                            <correlation_tag/>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>0</manual_close>
                             <dependencies/>
-                            <tags/>
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes/>
                     <host_prototypes/>
-                    <jmx_endpoint/>
                 </discovery_rule>
             </discovery_rules>
-            <httptests/>
             <macros/>
             <templates/>
             <screens/>

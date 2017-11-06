@@ -223,47 +223,47 @@ in most cases 0 = succesfull</description>
                     <newvalue>Succès</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x41300</value>
+                    <value>267008</value>
                     <newvalue>La tâche est prête à fonctionner à l'heure prévue suivante</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x41301</value>
+                    <value>267009</value>
                     <newvalue>La tâche est en cours d'exécution</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x41303</value>
+                    <value>267011</value>
                     <newvalue>La tâche n'est pas encore terminée</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x41304</value>
+                    <value>267012</value>
                     <newvalue>Il n'y a plus d'opérations programmées pour cette tâche</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x41306</value>
+                    <value>267014</value>
                     <newvalue>La tâche est terminée</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x800704DD</value>
+                    <value>2147943645</value>
                     <newvalue>Le service n'est pas disponible</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x8004130F</value>
+                    <value>2147750671</value>
                     <newvalue>Identifiants corrompus</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x8004131F</value>
+                    <value>2147750687</value>
                     <newvalue>Une instance de cette tâche est déjà en cours d'exécution</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x8007010B</value>
+                    <value>2147942667</value>
                     <newvalue>Le répertoire «démarrer dans» ne peut être trouvé</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0x80070002</value>
+                    <value>2147942402</value>
                     <newvalue>Un des fichiers n'est pas disponible</newvalue>
                 </mapping>
                 <mapping>
-                    <value>0xC06D007E</value>
+                    <value>3228369022</value>
                     <newvalue>Exception logicielle inconnue</newvalue>
                 </mapping>
                 <mapping>
@@ -277,10 +277,6 @@ in most cases 0 = succesfull</description>
                 <mapping>
                     <value>10</value>
                     <newvalue>Environnement Incorrect</newvalue>
-                </mapping>
-                <mapping>
-                    <value>267014</value>
-                    <newvalue>Tâche annulé par l'utilisateur</newvalue>
                 </mapping>
             </mappings>
         </value_map>

@@ -8,7 +8,7 @@ Items : Task Last Result (Status for each tasks), Task Last Run Time, Task Next 
 
 Discovery : All tasks Active or Running
 
-Triggers : [HIGH] => Last Result of tasks FAILED
+Triggers : [HIGH] => Last Result of tasks FAILED<br>
 Triggers : [HIGH] => State of tasks Disabled
 
 Install :

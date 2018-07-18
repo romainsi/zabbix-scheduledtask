@@ -9,6 +9,8 @@
 #
 ## Modifier la variable $path pour indiquer les sous dossiers de Tâches Planifiées à traiter sous la forme "\nomDossier\","\nomdossier2\sousdossier\" voir (Get-ScheduledTask -TaskPath )
 ## Change the $path variable to indicate the Scheduled Tasks subfolder to be processed as "\nameFolder\","\nameFolder2\subfolder\" see (Get-ScheduledTask -TaskPath )
+## Pour la découverte des tâches à la racine utiliser "\"
+## For discovery task to the root folder use "\"
 
 
 $path = "\examplefolder\"

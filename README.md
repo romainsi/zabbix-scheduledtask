@@ -33,3 +33,5 @@ UserParameter=TaskSchedulerMonitoring[*],powershell -NoProfile -ExecutionPolicy 
 
 Value mapping 'scheduledtask' is in french for error ID of tasks.
 
+Timeout=(3-30)   Ajust with your server performance (and don't forget in server.conf on zabbix server : timeout specifies how long we wait for agent, SNMP device or external check (in seconds) so ajust too)
+
